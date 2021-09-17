@@ -1,11 +1,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char **ft_arrdup(char **arr)
+char	**ft_arrdup(char **arr)
 {
-	int i;
-	int len;
-	char **res;
+	int		i;
+	int		len;
+	char	**res;
 
 	len = (int)ft_arrlen(arr);
 	res = (char **)malloc((len + 1) * sizeof(char *));

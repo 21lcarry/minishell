@@ -22,7 +22,7 @@ typedef struct s_list
 }				t_list;
 char			*ft_strchr(const char *string, int symbol);
 char			*ft_strrchr(const char *str, int ch);
-size_t			ft_strlcpy (char *dst, const char *src, size_t size);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *str);
 int				ft_isalpha(int ch);
@@ -65,8 +65,8 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
-int	ft_isspace(int ch);
-size_t ft_arrlen(char **arr);
-char **ft_arrdup(char **arr);
+int				ft_isspace(int ch);
+size_t			ft_arrlen(char **arr);
+char			**ft_arrdup(char **arr);
 
 #endif

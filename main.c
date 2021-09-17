@@ -1,20 +1,20 @@
 #include "includes/minishell.h"
 
-static void ft_err(t_main *main, int err)
+static void	ft_err(t_main *main, int err)
 {
 	if (err != -1)
 	{
 		ft_putstr_fd("-minishell: ", STDERR);
-		ft_putstr_fd( main->cmd[err]->command[0], STDERR);
+		ft_putstr_fd(main->cmd[err]->command[0], STDERR);
 		ft_putstr_fd(": ", STDERR);
 		ft_putendl_fd(strerror(errno), STDERR);
 	}
 }
 
-int ft_start(t_main *main)
+int	ft_start(t_main *main)
 {
-	int index;
-	int err;
+	int	index;
+	int	err;
 
 	err = -2;
 	index = 0;
@@ -40,9 +40,9 @@ int ft_start(t_main *main)
 	return (0);
 }
 
-int main(int ac, char **av, char **ev)
+int	main(int ac, char **av, char **ev)
 {
-	t_main *main;
+	t_main	*main;
 
 	(void)ac;
 	(void)av;

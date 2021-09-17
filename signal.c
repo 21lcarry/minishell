@@ -1,6 +1,6 @@
 #include "includes/minishell.h"
 
-void ft_sigint(int param)
+void	ft_sigint(int param)
 {
 	(void)param;
 	g_status = 130;

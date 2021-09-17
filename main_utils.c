@@ -1,6 +1,6 @@
 #include "includes/minishell.h"
 
-void ft_close(int fd)
+void	ft_close(int fd)
 {
 	if (fd > 0)
 		close(fd);
@@ -27,11 +27,11 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 }
 
-static int ft_free_cmd2(t_main *main, int i)
+static int	ft_free_cmd2(t_main *main, int i)
 {
-    int err;
+	int	err;
 
-    err = 0;
+	err = 0;
 	if (main->cmd[i]->fd_in != -1)
 		err = close(main->cmd[i]->fd_in);
 	main->cmd[i]->fd_in = -1;
@@ -43,14 +43,14 @@ static int ft_free_cmd2(t_main *main, int i)
 		unlink(main->cmd[i]->file);
 		free(main->cmd[i]->file);
 	}
-    return (err);
+	return (err);
 }
 
-int ft_free_cmd(t_main *main)
+int	ft_free_cmd(t_main *main)
 {
-	int i;
-	int err;
-	int j;
+	int	i;
+	int	err;
+	int	j;
 
 	i = -1;
 	err = 0;
@@ -63,9 +63,9 @@ int ft_free_cmd(t_main *main)
 			while (main->cmd[i]->command[++j] != NULL)
 				free(main->cmd[i]->command[j]);
 		if (main->cmd[i]->command && main->cmd[i]->fd_in == -1
-            && main->cmd[i]->fd_out == -1)
+			&& main->cmd[i]->fd_out == -1)
 			free(main->cmd[i]->command);
-        err = ft_free_cmd2(main, i);
+		err = ft_free_cmd2(main, i);
 		free(main->cmd[i]);
 	}
 	free(main->cmd);

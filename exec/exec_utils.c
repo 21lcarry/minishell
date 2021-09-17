@@ -5,7 +5,7 @@ int	ft_preparser_error(char c)
 	char	tmp[3];
 
 	ft_putstr_fd("-minishell: preparser: syntax error near unexpected token `",
-	STDERR);
+		STDERR);
 	tmp[0] = c;
 	tmp[1] = '\'';
 	tmp[2] = '\0';

@@ -1,6 +1,6 @@
 #include "includes/minishell.h"
 
-int  ft_init_struct(t_main *main, char **ev)
+int	ft_init_struct(t_main *main, char **ev)
 {
 	g_status = 0;
 	main->env = ft_arrdup(ev);
@@ -9,15 +9,15 @@ int  ft_init_struct(t_main *main, char **ev)
 	main->num_p = 0;
 	main->cmd = NULL;
 	main->tmp_in = dup(0);
-	main->tmp_out =	dup(1);
+	main->tmp_out = dup(1);
 	main->env_exp = ft_arrdup(ev);
 	ft_del_env_exp("_", main);
-	return(1);
+	return (1);
 }
 
-void ft_init_cmd(t_main *main)
+void	ft_init_cmd(t_main *main)
 {
-	int i;
+	int	i;
 
 	main->cmd = (t_cmd **)malloc((main->num_p + 2) * sizeof(t_cmd *));
 	i = -1;
