@@ -18,6 +18,7 @@
 # define SP 31
 # define IN 29
 # define OUT 28
+
 int	g_status;
 
 typedef struct s_cmd
